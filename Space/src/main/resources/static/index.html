@@ -6,19 +6,20 @@
 	<title>Space</title>
 	
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" integrity="sha256-HAaDW5o2+LelybUhfuk0Zh2Vdk8Y2W2UeKmbaXhalfA=" crossorigin="anonymous" />
+	<link href="https://fonts.googleapis.com/css?family=Monda|Orbitron" rel="stylesheet">
 	<link rel="stylesheet" href="./style.css">
 	
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js" integrity="sha256-Y1rRlwTzT5K5hhCBfAFWABD4cU13QGuRN6P5apfWzVs=" crossorigin="anonymous"></script>
 	<script src="script.js"></script>
 </head>
 
 <body>
 
-	<div class="body-background">
-		<img src="./res/pale_blue_dot_1.jpg">
-	</div>
+	<h1 class="title">Spess</h1>
 	
 	<header id="bannerCarousel" class="carousel slide banner-carousel" data-ride="carousel">
 		<!-- Indicators -->
@@ -26,21 +27,51 @@
 			<li data-target="#bannerCarousel" data-slide-to="0" class="active"></li>
 			<li data-target="#bannerCarousel" data-slide-to="1"></li>
 			<li data-target="#bannerCarousel" data-slide-to="2"></li>
+			<li data-target="#bannerCarousel" data-slide-to="3"></li>
+			<li data-target="#bannerCarousel" data-slide-to="4"></li>
+			<li data-target="#bannerCarousel" data-slide-to="5"></li>
+			<li data-target="#bannerCarousel" data-slide-to="6"></li>
+			<li data-target="#bannerCarousel" data-slide-to="7"></li>
+			<li data-target="#bannerCarousel" data-slide-to="8"></li>
 		</ol>
 
 		<!-- Wrapper for slides -->
 		<div class="carousel-inner">
 			<div class="carousel-item active">
-				<h1>CAROUSEL 1</h1>
-				<p class="carousel-caption"></p>
+				<a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Mercury_(planet)"><img src="./res/mercury_1.jpg"></a>
+				<p class="carousel-caption">Mercury</p>
 			</div>
 			<div class="carousel-item">
-				<h1>CAROUSEL 2</h1>
-				<p class="carousel-caption"></p>
+				<a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Venus"><img src="./res/venus_1.jpg"></a>
+				<p class="carousel-caption">Venus</p>
 			</div>
 			<div class="carousel-item">
-				<h1>CAROUSEL 3</h1>
-				<p class="carousel-caption"></p>
+				<a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Earth"><img src="./res/earth_1.jpg"></a>
+				<p class="carousel-caption">Earth</p>
+			</div>
+			<div class="carousel-item">
+				<a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Mars"><img src="./res/mars_1.jpg"></a>
+				<p class="carousel-caption">Mars</p>
+			</div>
+			<div class="carousel-item">
+				<a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Jupiter"><img src="./res/jupiter_1.jpg"></a>
+				<p class="carousel-caption">Jupiter</p>
+			</div>
+			<div class="carousel-item">
+				<a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Saturn"><img class="saturn" src="./res/saturn_1.jpg"></a>
+				<p class="carousel-caption">Saturn</p>
+			</div>
+			<div class="carousel-item">
+				<a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Uranus"><img src="./res/uranus_1.jpg"></a>
+				<p class="carousel-caption">Uranus</p>
+			</div>
+			<div class="carousel-item">
+				<a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Neptune"><img src="./res/neptune_1.jpg"></a>
+				<p class="carousel-caption">Neptune</p>
+			</div>
+			<div class="carousel-item">
+				<a target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/Pluto"><img src="./res/pluto_1.jpg"></a>
+				<p class="carousel-caption">Pluto</p>
 			</div>
 		</div>
 
@@ -54,8 +85,6 @@
 	</header>
 	
 	<nav class="navbar navbar-expand-md navbar-dark bg-dark">
-		<!-- Brand -->
-		<a href="index.html"><h4 class="navbar-header">Spess</h4></a>
 
 		<!-- Toggler/collapsibe Button -->
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
@@ -66,23 +95,25 @@
 		<div class="collapse navbar-collapse" id="collapsibleNavbar">
 			<ul class="navbar-nav">
 				<li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
+					<button type="button" onclick="onHome()" class="btn btn-outline-primary btn-lg">Home</button>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="guide.html">Guide</a>
+					<button type="button" onclick="onGallery()" class="btn btn-outline-primary btn-lg">Gallery</button>
                 </li>
 				<li class="nav-item">
-                    <a class="nav-link" href="gallery.html">Gallery</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="products.html">Products</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
+					<button type="button" onclick="onRandom()" class="btn btn-outline-primary btn-lg">Random</button>
                 </li>
 			</ul>
 		</div> 
 	</nav>
+
+	<div class="body-background">
+		<img src="./res/pale_blue_dot_1.jpg">
+	</div>
+
+	<main>
+		
+	</main>
 </body>
 
 </html>
