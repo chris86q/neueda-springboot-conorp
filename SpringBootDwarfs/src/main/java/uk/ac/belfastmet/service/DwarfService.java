@@ -11,7 +11,7 @@ public class DwarfService {
 		ArrayList<Dwarf> dwarfs = new ArrayList<>();
 		
 		for(String s: dwarfsList) {
-			dwarfs.add(new Dwarf(s, "Tolkien", s+".png"));
+			dwarfs.add(new Dwarf(s, "Disney", s+".png"));
 		}
 		
 		return dwarfs;
@@ -26,6 +26,6 @@ public class DwarfService {
 			dwarves.add(new Dwarf(s, "Tolkien", s+".png"));
 		}
 		
-		return dwarves;
+		return dwarves; 
 	}
 }
