@@ -38,7 +38,7 @@ public class Top5Buildings {
 			"France",
 			"Toulouse-Blagnac",
 			"https://constructalia.arcelormittal.com/files/styles/carousel_large/public/NE_38_picture_10--8590805eff1f7a4014025fbc30f9a0d7.jpg",
-			"Test map"
+			"<iframe width=\"100%\" height=\"400px\" frameborder=\"0\" src=\"https://www.bing.com/maps/embed?h=400&w=500&cp=43.65164162737027~1.3582381826736877&lvl=15&typ=d&sty=r&src=SHELL&FORM=MBEDV8\" scrolling=\"no\">\r\n</iframe>"
 		);
 		
 		buildings.add(new BuildingVolume(building, "122,500", "5,600,000"));
@@ -49,7 +49,7 @@ public class Top5Buildings {
 			"United States",
 			"Everett, Washington",
 			"https://upload.wikimedia.org/wikipedia/commons/b/b1/Boeing_Everett_Plant.jpg",
-			"Test map"
+			"<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2673.763882469593!2d-122.29196358435843!3d47.921605979206795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54900164f9502991%3A0x903b231982d227fd!2sFuture+Of+Flight+Museum!5e0!3m2!1sen!2suk!4v1542988767564\" width=\"100%\" height=\"400px\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>"
 		);
 		
 		buildings.add(new BuildingVolume(building, "111,500", "3,700,000"));
@@ -60,7 +60,7 @@ public class Top5Buildings {
 			"Germany",
 			"Halbe, Brandenburg",
 			"https://upload.wikimedia.org/wikipedia/commons/8/8e/S%C3%BCdsee_Tropicel_Islands.JPG",
-			"Test map"
+			"<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5131531.01726471!2d5.968221255018044!3d51.09682854935311!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x479a721ec2b1be6b%3A0x75e85d6b8e91e55b!2sGermany!5e0!3m2!1sen!2suk!4v1543835834671\" width=\"100%\" height=\"400\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>"
 		);
 		
 		buildings.add(new BuildingVolume(building, "70,000", "5,200,000"));		
