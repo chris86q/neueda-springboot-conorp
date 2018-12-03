@@ -52,7 +52,7 @@ public class Top5Buildings {
 			"<iframe src=\"https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2673.763882469593!2d-122.29196358435843!3d47.921605979206795!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54900164f9502991%3A0x903b231982d227fd!2sFuture+Of+Flight+Museum!5e0!3m2!1sen!2suk!4v1542988767564\" width=\"100%\" height=\"400px\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>"
 		);
 		
-		buildings.add(new BuildingVolume(building, "111,500", "3,700,000"));
+		buildings.add(new BuildingVolume(building, "111,500", "3,700,000")); 
 		
 		building = new Building(
 			"Aerium",

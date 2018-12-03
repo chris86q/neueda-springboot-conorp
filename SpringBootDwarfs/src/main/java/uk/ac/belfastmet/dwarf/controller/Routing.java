@@ -1,18 +1,23 @@
 package uk.ac.belfastmet.dwarf.controller;
 
-import java.util.ArrayList;
-
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import uk.ac.belfastmet.dwarf.domain.Dwarf;
-import uk.ac.belfastmet.service.DwarfService;
+import uk.ac.belfastmet.dwarf.repository.DwarfRepository;
 
 @Controller
 @RequestMapping("")
 public class Routing {
+	DwarfRepository dwarfRepo;
+	
+	Routing(DwarfRepository dwarfRepo) {
+		super();
+		this.dwarfRepo = dwarfRepo;
+	}
 
 	@GetMapping("")
 	public String home(Model model) {
@@ -21,25 +26,25 @@ public class Routing {
 	
 	@GetMapping("/disney")
 	public String disney(Model model) {
-		
-		ArrayList<Dwarf> dwarfs = new ArrayList<>();
-		dwarfs = new DwarfService().getDisneyDwarfs();
-			
 		model.addAttribute("pageTitle", "Disney");
-		model.addAttribute("disneyDwarfs", dwarfs);
+		model.addAttribute("dwarfs", dwarfRepo.findByAuthor("Disney"));
 		
-		return "disney.html";
+		return "dwarf_page_card";
 	}
 	
 	@GetMapping("/tolkien")
 	public String tolkien(Model model) {
-		
-		ArrayList<Dwarf> dwarves = new ArrayList<>();
-		dwarves = new DwarfService().getTolkienDwarfs();
-		
 		model.addAttribute("pageTitle", "Tolkien");
-		model.addAttribute("tolkienDwarfs", dwarves);
+		model.addAttribute("dwarfs", dwarfRepo.findByAuthor("Tolkien"));
 		
-		return "tolkien";
+		return "dwarf_page_card";
+	}
+	
+	@PostMapping("/result")
+	public String result(Model model, @RequestBody String s) {
+		System.out.println(s);
+		model.addAttribute("pageTitle", "Search Result");
+		
+		return "dwarf_page_card";
 	}
 }

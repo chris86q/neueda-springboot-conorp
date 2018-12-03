@@ -1,0 +1,5 @@
+[Mon Dec 03 14:15:56.573953 2018] [mpm_winnt:notice] [pid 4896:tid 792] AH00455: Apache/2.4.6 (Win32) PHP/5.4.17 configured -- resuming normal operations
+[Mon Dec 03 14:15:56.573953 2018] [mpm_winnt:notice] [pid 4896:tid 792] AH00456: Apache Lounge VC10 Server built: Jul 16 2013 11:15:41
+[Mon Dec 03 14:15:56.574875 2018] [core:notice] [pid 4896:tid 792] AH00094: Command line: 'C:\\Users\\poi18161670\\Documents\\EclipseProjects\\USBWebserver v8.6/apache2/bin/httpd_usbwv8.exe -d C:/Users/poi18161670/Documents/EclipseProjects/USBWebserver v8.6/apache2'
+[Mon Dec 03 14:15:56.582875 2018] [mpm_winnt:notice] [pid 4896:tid 792] AH00418: Parent: Created child process 3300
+[Mon Dec 03 14:15:57.750598 2018] [mpm_winnt:notice] [pid 3300:tid 812] AH00354: Child: Starting 64 worker threads.
