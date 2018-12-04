@@ -7,4 +7,8 @@ import uk.ac.belfastmet.dwarf.domain.Dwarf;
 public interface DwarfRepository extends CrudRepository<Dwarf, Integer> {
 	
 	Iterable<Dwarf> findByAuthor(String author);
+
+	Dwarf findByDwarfId(Integer id);
+
+	Dwarf findByName(String name);
 }

@@ -22,10 +22,17 @@
 					<a type="button" href="/disney" class="btn btn-outline-secondary">Disney</a>
 				</li>
 				<li>
-					<form action="/result.html">
-					  	<input type="text" name="Query" placeholder="Search">
-					  	<input type="submit" value="Submit">
-					</form> 
+					<form action="/result" class="form-inline">
+					  	<div class="form-group">
+						    <select name="category" class="form-control" id="search-category">
+						      <option>ID</option>
+						      <option>Author</option>
+						      <option>Name</option>
+						    </select>
+						    <input name="search" type="text" class="form-control" id="search-criteria" placeholder="Enter Search Criteria . . ." autocomplete="off">
+						    <button type="submit" class="btn btn-primary">Submit</button>
+						</div>
+					</form>
 				</li>
 			</ul>
 		</div> 

@@ -9,7 +9,7 @@ public class Dwarf {
 	
 	@Id
 	@GeneratedValue
-	private Integer id;
+	private Integer dwarfId;
 	private String name, author, image;
 
 	public Dwarf() {
@@ -24,11 +24,11 @@ public class Dwarf {
 	}
 
 	public Integer getId() {
-		return id;
+		return dwarfId;
 	}
 
 	public void setId(Integer id) {
-		this.id = id;
+		this.dwarfId = id;
 	}
 
 	public String getName() {
