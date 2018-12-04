@@ -15,7 +15,7 @@
 	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.7.1/less.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js" integrity="sha256-Y1rRlwTzT5K5hhCBfAFWABD4cU13QGuRN6P5apfWzVs=" crossorigin="anonymous"></script>
-	<script src="script.js"></script>
+	<script src="scripts.js"></script>
 </head>
 <body>
 
@@ -25,17 +25,38 @@
 
 	<main class="container-fluid">
 		<div class="container">
-			<div class="row">
-				<div th:each="passenger: ${passengers}" class="col-lg-2">
-					<div class="card">
-					  	<div class="card-body">
-					    	<h4 th:text=${passenger.name} class="card-title"></h4>
-					   		<p th:text=${passenger.age} class="card-text"></p>
-					   		<p th:text=${passenger.survived} class="card-text"></p>
-					 	</div>					
-					</div>
-				</div>
-			</div>
+			<table class="table table-striped">
+				<thead>
+					<th>PassengerID</th>
+					<th>Name</th>
+					<th>Age</th>
+					<th>Sex</th>
+					<th>Ticket</th>
+					<th>Fare</th>
+					<th>Cabin</th>
+					<th>Embarked</th>
+					<th>PClass</th>
+					<th>Sibsp</th>
+					<th>Parch</th>
+					<th>Survived</th>
+				</thead>
+				<tbody>
+					<tr th:each="passenger: ${passengers}">
+						<td th:text=${passenger.passengerId}></td>
+						<td th:text=${passenger.name}></td>
+						<td th:text=${passenger.age}></td>
+						<td th:text=${passenger.sex}></td>
+						<td th:text=${passenger.ticket}></td>
+						<td th:text=${passenger.fare}></td>
+						<td th:text=${passenger.cabin}></td>
+						<td th:text=${passenger.embarked}></td>
+						<td th:text=${passenger.pclass}></td>
+						<td th:text=${passenger.sibsp}></td>
+						<td th:text=${passenger.parch}></td>
+						<td th:text="${passenger.survived}"></td>
+					</tr>
+				</tbody>
+			</table>
 		</div>
 	</main>
 

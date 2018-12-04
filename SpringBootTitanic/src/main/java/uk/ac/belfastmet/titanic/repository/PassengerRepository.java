@@ -13,5 +13,7 @@ public interface PassengerRepository extends CrudRepository<Passenger, Integer> 
 	Iterable<Passenger> findByAge(String search);
 
 	Iterable<Passenger> findBySurvived(int parseInt);
+
+	Iterable<Passenger> findByAgeAndSex(String string, String string2);
 	
 }

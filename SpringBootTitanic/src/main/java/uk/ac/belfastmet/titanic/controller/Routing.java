@@ -26,19 +26,11 @@ public class Routing {
 	}
 	
 	@GetMapping("/passengers")
-	public String passengers(Model model) {
-		model.addAttribute("pageTitle", "Passenegrs");
-		model.addAttribute("passengers", passengerRepository.findAll());
-		
-		return "passengers";
-	}
-	
 	public String passengers(@RequestParam("search") String search, @RequestParam("category") String category, Model model) {
-		model.addAttribute("pageTitle", "Passenegrs");
-		if(search.equals(null) || category.equals(null))
-			model.addAttribute("passengers", passengerRepository.findAll());
+		model.addAttribute("pageTitle", "Passengers");
 		
 		switch(category) {
+			case "All": model.addAttribute("passengers", passengerRepository.findAll()); break;
 			case "ID": model.addAttribute("passengers", passengerRepository.findByPassengerId(Integer.parseInt(search))); break;
 			case "Name": model.addAttribute("passengers", passengerRepository.findByName(search)); break;
 			case "Age": model.addAttribute("passengers", passengerRepository.findByAge(search)); break;
