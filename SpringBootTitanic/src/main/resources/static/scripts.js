@@ -5,6 +5,7 @@ window.onload = () => {
     var btn = document.getElementById("submit-btn");
     btn.onclick = () => {
         console.log("I was clacked");
+        
+        
     };
 };
-
