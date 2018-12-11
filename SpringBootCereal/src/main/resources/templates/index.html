@@ -1,0 +1,81 @@
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://thymeleaf.org">
+<head>
+	<title th:text=${pageTitle}></title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" integrity="sha256-HAaDW5o2+LelybUhfuk0Zh2Vdk8Y2W2UeKmbaXhalfA=" crossorigin="anonymous" >
+	<link href="https://fonts.googleapis.com/css?family=Monda|Orbitron|Homemade+Apple" rel="stylesheet">
+	<link rel="stylesheet/less" type="text/css" href="/styles.less" >
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.7.1/less.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js" integrity="sha256-Y1rRlwTzT5K5hhCBfAFWABD4cU13QGuRN6P5apfWzVs=" crossorigin="anonymous"></script>
+	<script src="/scripts.js"></script>
+</head>
+<body>
+
+	<!--  <nav th:replace="layouts :: headerFragment"></nav>
+
+	<nav th:replace="layouts :: navFragment"></nav> -->
+	
+	<main class="container-fluid">
+		<form action="/index" class="form-inline" method="post">
+		  	<div class="form-group">
+			    <select name="category" class="form-control" id="search-category">
+			    	<option>Cereal ID</option>
+					<option>Name</option>	
+					<option>Manufacturer</option>
+			    </select>
+			    <input name="search" type="text" class="form-control" placeholder="Enter Search Criteria" autocomplete="off">
+			    <button type="submit" class="btn btn-primary">Submit</button>
+			</div>
+		</form>
+		<table class="table table-striped">
+			<thead>
+				<th>Cereal ID</th>
+				<th>Name</th>	
+				<th>Manufacturer</th>
+				<th>Energy(kj)</th>
+				<th>Calories(kcal)</th>
+				<th>Protein(g)</th>
+				<th>Carbohydrate(g)</th>
+				<th>Sugars(g)</th>
+				<th>Fat(g)</th>
+				<th>Saturates(g)</th>
+				<th>Fiber(g)</th>
+				<th>Sodium(g)</th>
+				<th>Salt(g)</th>
+				<th>Iron(mg)</th>
+				<th>View</th>
+				<th>Delete</th>
+			</thead>
+			<tbody>
+				<tr th:each="cereal: ${cereals}">
+					<td th:text="${cereal.cerealId}"></td>
+					<td th:text="${cereal.cereal}"></td>
+					<td th:text="${cereal.manufacturer}">Manufacturer</td>
+					<td th:text="${cereal.energy_kj}">Energy(kj)</td>
+					<td th:text="${cereal.calories_kcal}">Calories(kcal)</td>
+					<td th:text="${cereal.protein_g}">Protein(g)</td>
+					<td th:text="${cereal.carbohydrate_g}">Carbohydrate(g)</td>
+					<td th:text="${cereal.sugars_g}">Sugars(g)</td>
+					<td th:text="${cereal.fat_g}">Fat(g)</td>
+					<td th:text="${cereal.saturates_g}">Saturates(g)</td>
+					<td th:text="${cereal.fiber_g}">Fiber(g)</td>
+					<td th:text="${cereal.sodium_g}">Sodium(g)</td>
+					<td th:text="${cereal.salt_g}">Salt(g)</td>
+					<td th:text="${cereal.iron_mg}">Iron(mg)</td>
+					<td><a href></a></td>
+					<td th:text="${cereal.iron_mg}">Iron(mg)</td>
+				</tr>
+			</tbody>
+		</table>
+	</main>
+
+</body>
+</html>

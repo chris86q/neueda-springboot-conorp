@@ -1,0 +1,61 @@
+
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://thymeleaf.org">
+<head>
+	<title th:text=${pageTitle}></title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" integrity="sha256-HAaDW5o2+LelybUhfuk0Zh2Vdk8Y2W2UeKmbaXhalfA=" crossorigin="anonymous" >
+	<link href="https://fonts.googleapis.com/css?family=Monda|Orbitron|Homemade+Apple" rel="stylesheet">
+	<link rel="stylesheet/less" type="text/css" href="/styles.less" >
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.7.1/less.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js" integrity="sha256-Y1rRlwTzT5K5hhCBfAFWABD4cU13QGuRN6P5apfWzVs=" crossorigin="anonymous"></script>
+	<script src="/scripts.js"></script>
+</head>
+<body>
+
+	<nav th:replace="layouts :: headerFragment"></nav>
+
+	<nav th:replace="layouts :: navFragment"></nav>
+
+	<main class="container-fluid">
+		<div class="container">
+			<div class="card">
+			  	<div class="card-body">
+			  		<form th:action="@{/save}" method="post">
+			  			ID
+			  			<input type="text" class="form-control" th:field="${passenger.passengerId}"></input>
+			  			Name
+						<input type="text" class="form-control" th:field="${passenger.name}"></input>
+						Age
+						<input type="text" class="form-control" th:field="${passenger.age}"></input>
+						Sex	
+						<input type="text" class="form-control" th:field="${passenger.sex}"></input>
+						Ticket	
+						<input type="text" class="form-control" th:field="${passenger.ticket}"></input>
+						Fare	
+						<input type="text" class="form-control" th:field="${passenger.fare}"></input>
+						Sibsp	
+						<input type="text" class="form-control" th:field="${passenger.sibsp}"></input>
+						Parch	
+						<input type="text" class="form-control" th:field="${passenger.parch}"></input>
+						Cabin	
+						<input type="text" class="form-control" th:field="${passenger.cabin}"></input>
+						Embarked	
+						<input type="text" class="form-control" th:field="${passenger.embarked}"></input>
+						Survived	
+						<input type="text" class="form-control" th:field="${passenger.survived}"></input>
+						<input type="submit">
+			  		</form>
+			 	</div>					
+			</div>
+		</div>
+	</main>
+
+</body>
+</html>

@@ -4,10 +4,12 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import uk.ac.belfastmet.titanic.domain.Passenger;
 import uk.ac.belfastmet.titanic.repository.PassengerRepository;
 import uk.ac.belfastmet.titanic.service.PassengerService;
 
@@ -52,6 +54,22 @@ public class Routing {
 		return "profile";
 	}
 	
+	@GetMapping("/edit/{passengerId}")
+	public String edit(@PathVariable("passengerId") String id, Model model) {
+		model.addAttribute("pageTitle", "Edit");
+		model.addAttribute("passenger", passengerService.getPassengerById(Integer.parseInt(id)));
+		
+		return "edit";
+	}
+	
+	@GetMapping("/add")
+	public String add(String id, Model model) {
+		model.addAttribute("pageTitle", "Edit");
+		model.addAttribute("passenger", new Passenger());
+		
+		return "edit";
+	}
+	
 	@GetMapping("/delete/{passengerId}")
 	public String delete(@PathVariable("passengerId") int id, Model model, RedirectAttributes redirectAttributes) {
 		passengerService.deletePassengerById(id);
@@ -59,5 +77,10 @@ public class Routing {
 		
 		return "redirect:/passengers?category=All&search=";
 	}
-
+	
+	@PostMapping("/save")
+	public String save(Passenger passenger, Model model) {
+		passengerService.savePassenger(passenger);
+		return "redirect:/passengers?category=All&search=";
+	}
 }

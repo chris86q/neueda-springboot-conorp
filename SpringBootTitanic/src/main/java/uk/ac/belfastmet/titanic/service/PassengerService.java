@@ -6,23 +6,28 @@ import uk.ac.belfastmet.titanic.repository.PassengerRepository;
 
 public class PassengerService {
 	private PassengerRepository passengerRepository;
-	private Iterable<Passenger> passengers;
+	private ArrayList<Passenger> passengers;
 	
 	public PassengerService(PassengerRepository passengerRepository) {
 		this.passengerRepository = passengerRepository;
 	}
 	
 	public ArrayList<Passenger> getPassengers() {
-		ArrayList<Passenger> arr = new ArrayList<>();
-		
 		if(passengers == null) {
-			passengers = passengerRepository.findAll();
+			passengers = (ArrayList<Passenger>) passengerRepository.findAll();
 			System.out.println("CREATED PASSENGER CACHE");
 		}
-		
-		arr = (ArrayList<Passenger>) passengers;
-		
-		return arr;
+
+		return passengers;
+	}
+	
+	public ArrayList<Passenger> getPassengers(boolean flag) {
+		if(passengers == null || flag) {
+			passengers = (ArrayList<Passenger>) passengerRepository.findAll();
+			System.out.println("CREATED PASSENGER CACHE");
+		}
+
+		return passengers;
 	}
 	
 	public Passenger getPassengerById(Integer id) {
@@ -31,6 +36,7 @@ public class PassengerService {
 		for(Passenger passenger : passengers) {
 			if(passenger.getPassengerId() == id) {
 				p = passenger;
+				break;
 			}
 		}
 		
@@ -43,6 +49,7 @@ public class PassengerService {
 		for(Passenger passenger : passengers) {
 			if(passenger.getName().equals(name)) {
 				p = passenger;
+				break;
 			}
 		}
 		
@@ -142,9 +149,16 @@ public class PassengerService {
 		return arr;
 	}
 	
+	public void savePassenger(Passenger passenger) {
+		passengerRepository.save(passenger);
+		this.getPassengers(true);
+		System.out.println("RECACHED PASSENGERS");
+	}
+	
 	public void deletePassengerById(int id) {
 		passengerRepository.deleteById(id);
-		passengers = passengerRepository.findAll();
+		this.getPassengers(true);
+		System.out.println("RECACHED PASSENGERS");
 	}
 	
 }
