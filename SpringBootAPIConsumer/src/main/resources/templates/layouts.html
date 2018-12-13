@@ -1,0 +1,41 @@
+
+	<header class="jumbotron" th:fragment="headerFragment">
+		<h1>Titanic Home</h1>
+		<p>This is the homepage for the Titanic</p>
+	</header>
+
+	<nav class="navbar navbar-expand-md navbar-light" th:fragment="navFragment">
+
+		<!-- Toggler/collapsibe Button -->
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+	
+		<!-- Navbar links -->
+		<div class="collapse navbar-collapse" id="collapsibleNavbar">
+			<ul class="navbar-nav">
+				<li class="nav-item">
+					<a type="button" href="/" class="btn btn-outline-secondary">Home</a>
+				</li>
+				<li class="nav-item">
+					<a type="button" href="/passengers?category=All&search=" class="btn btn-outline-secondary">Passengers</a>
+				</li>
+				<li>
+					<form action="/passengers" class="form-inline">
+					  	<div class="form-group">
+						    <select name="category" class="form-control" id="search-category">
+						    	<option>All</option>
+						      	<option>ID</option>
+						      	<option>Name</option>
+						      	<option>Age</option>
+						      	<option>Survived</option>
+						      	<option>Tags</option>
+						    </select>
+						    <input name="search" type="text" class="form-control" id="search-criteria" placeholder="Enter Search Criteria" autocomplete="off">
+						    <button type="submit" class="btn btn-primary" id="submit-btn">Submit</button>
+						</div>
+					</form>
+				</li>
+			</ul>
+		</div> 
+	</nav>

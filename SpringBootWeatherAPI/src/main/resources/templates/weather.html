@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://thymeleaf.org">
+<head>
+	<title th:text=${pageTitle}></title>
+
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.css" integrity="sha256-HAaDW5o2+LelybUhfuk0Zh2Vdk8Y2W2UeKmbaXhalfA=" crossorigin="anonymous" >
+	<link href="https://fonts.googleapis.com/css?family=Monda|Orbitron|Homemade+Apple" rel="stylesheet">
+	<link rel="stylesheet/less" type="text/css" href="/styles.less" >
+	
+	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	<script src="//cdnjs.cloudflare.com/ajax/libs/less.js/3.7.1/less.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ekko-lightbox/5.3.0/ekko-lightbox.min.js" integrity="sha256-Y1rRlwTzT5K5hhCBfAFWABD4cU13QGuRN6P5apfWzVs=" crossorigin="anonymous"></script>
+	<script src="/scripts.js"></script>
+</head>
+<body>
+	<nav class="navbar fixed-top navbar-light bg-light">
+	  <a class="navbar-brand" href="/">Home</a>
+	  <a href="/weather/belfast">Belfast</a>
+	  <a href="/weather/dublin">Dublin</a>
+	  <a href="/weather/london">London</a>
+	</nav>
+	
+	<div class="container content-container">
+		<div class="card">
+			<img class="card-img-top" th:src="${dailyWeather.weather.image}">
+			<div class="card-body">
+				<h5 class="card-title" th:text="${dailyWeather.location.name}"></h5>
+				<p class="card-text" th:text="${dailyWeather.weather.description}"></p>
+				<p class="card-text" th:text="'Speed: ' + ${dailyWeather.weather.wind.speed}"></p>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+					More Info
+				</button>
+				<a href="/" class="btn btn-primary">Back</a>
+			</div>
+		</div>
+	</div>
+	
+	<div class="modal" id="myModal">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	
+	      <!-- Modal Header -->
+	      <div class="modal-header">
+	        <h4 class="modal-title" th:text="${dailyWeather.location.name}"></h4>
+	        <button type="button" class="close" data-dismiss="modal">&times;</button>
+	      </div>
+	
+	      <!-- Modal body -->
+	      <div class="modal-body">
+	      	<img class="mx-auto d-block" th:src="${dailyWeather.weather.image}">
+	      	<h4>Location</h4>
+	      		<p th:text="'Name: ' + ${dailyWeather.location.name}"></p>
+	      		<p th:text="'Latitude: ' + ${dailyWeather.location.latitude}"></p>
+	      		<p th:text="'Longitude: ' + ${dailyWeather.location.longitude}"></p>
+	      	<h4>Weather</h4>
+	      		<p th:text="'description: ' + ${dailyWeather.weather.description}"></p>
+	      		<p th:text="'precipitaton: ' + ${dailyWeather.weather.precipitaton}"></p>
+	      		<p th:text="'temperature: ' + ${dailyWeather.weather.temperature}"></p>
+	      		<p th:text="'humidity: ' + ${dailyWeather.weather.humidity}"></p>
+	      		<p th:text="'pressure: ' + ${dailyWeather.weather.pressure}"></p>
+	      		<p th:text="'cloudcover: ' + ${dailyWeather.weather.cloudcover}"></p>
+	      		<p th:text="'speed: ' + ${dailyWeather.weather.wind.speed}"></p>
+	      		<p th:text="'direction: ' + ${dailyWeather.weather.wind.direction}"></p>
+	      </div>
+	
+	      <!-- Modal footer -->
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+	      </div>
+	
+	    </div>
+	  </div>
+	</div>
+
+</body>
